@@ -1,0 +1,30 @@
+<script>
+jQuery(function($){
+# Use jQuery to design action when click the button
+ $('.clicktoshow').each(function(i){
+# The click button is in cllicktoshow category
+  $(this).click(function(){
+   if (i===0) {
+# When click the first button in click show, then the first section of showclick will show and second section will hide
+    $('.showclick').eq(0).show();
+    $('.showclick').eq(1).hide();
+   }
+   if (i===1) {
+# When click the second button in click show, then the second section of showclick will show and first section will hide
+    $('.showclick').eq(1).show();
+    $('.showclick').eq(0).hide();
+   }
+  }); 
+ });
+});
+</script>
+<style>
+.clicktoshow{
+cursor: pointer;
+}
+#Hidden all showclidk
+.showclick{
+display: none;
+}
+</style>
+
