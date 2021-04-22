@@ -1,0 +1,45 @@
+// To change add to cart text on product archives(Collection) page
+add_filter( 'woocommerce_product_add_to_cart_text', 'woocommerce_custom_product_add_to_cart_text' );  
+function woocommerce_custom_product_add_to_cart_text() {
+    return __( 'Add to Budget Estimator', 'woocommerce' );
+}
+
+/*change 'View Cart' message*/
+add_filter( 'gettext', function( $translated_text ) {
+    if ( 'View cart' === $translated_text ) {
+        $translated_text = 'View Budget';
+    }
+    return $translated_text;
+} );
+
+/*change 'Update Cart' message*/
+function change_update_cart_text( $translated, $text, $domain ) {
+    if( is_cart() && $translated == 'Update cart' ){
+        $translated = 'Update Totals';
+    }
+    return $translated;
+}
+add_filter( 'gettext', 'change_update_cart_text', 20, 3 );
+
+
+/*change 'cart updated' message*/
+add_filter('gettext', 'wpse_124400_woomessages', 10, 3);
+
+function wpse_124400_woomessages($translation, $text, $domain) {
+    if ($domain == 'woocommerce') {
+        if ($text == 'Cart updated.') {
+            $translation = 'Budget Updated.';
+        }
+    }
+
+    return $translation;
+}
+
+/*change 'cart totals' message*/
+add_filter( 'gettext', 'change_cart_totals_text', 20, 3 );
+function change_cart_totals_text( $translated, $text, $domain ) {
+    if( is_cart() && $translated == 'Cart totals' ){
+        $translated = __('Calculated Budget', 'woocommerce');
+    }
+    return $translated;
+}
