@@ -1,18 +1,42 @@
 <script>
 jQuery(function($){
-# Use jQuery to design action when click the button
  $('.clicktoshow').each(function(i){
-# The click button is in cllicktoshow category
   $(this).click(function(){
    if (i===0) {
-# When click the first button in click show, then the first section of showclick will show and second section will hide
     $('.showclick').eq(0).show();
     $('.showclick').eq(1).hide();
+    $('.clicktoshow').eq(0).css('background','#FB2056');
+    $('.clicktoshow').eq(1).css('background','white');
    }
    if (i===1) {
-# When click the second button in click show, then the second section of showclick will show and first section will hide
     $('.showclick').eq(1).show();
     $('.showclick').eq(0).hide();
+    $('.clicktoshow').eq(1).css('background','#FB2056');
+    $('.clicktoshow').eq(0).css('background','white');
+   }
+   if (i===2) {
+    $('.showclick').eq(2).show();
+    $('.showclick').eq(3).hide();
+    $('.clicktoshow').eq(2).css('background','#FB2056');
+    $('.clicktoshow').eq(3).css('background','white');
+   }
+   if (i===3) {
+    $('.showclick').eq(3).show();
+    $('.showclick').eq(2).hide();
+    $('.clicktoshow').eq(3).css('background','#FB2056');
+    $('.clicktoshow').eq(2).css('background','white');
+   }
+   if (i===4) {
+    $('.showclick').eq(4).show();
+    $('.showclick').eq(5).hide();
+    $('.clicktoshow').eq(4).css('background','#FB2056');
+    $('.clicktoshow').eq(5).css('background','white');
+   }
+   if (i===5) {
+    $('.showclick').eq(5).show();
+    $('.showclick').eq(4).hide();
+    $('.clicktoshow').eq(5).css('background','#FB2056');
+    $('.clicktoshow').eq(4).css('background','white');
    }
   }); 
  });
@@ -22,9 +46,7 @@ jQuery(function($){
 .clicktoshow{
 cursor: pointer;
 }
-#Hidden all showclidk
 .showclick{
 display: none;
 }
 </style>
-
